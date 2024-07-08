@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('./data/Test MM  Seller data from wbenc.csv')
+df = pd.read_csv('data/Test MM  Seller data from wbenc.csv')
 
 # DBA --> mostly null
 # Join DBA to Company [DBA: _] seperated
@@ -64,4 +64,9 @@ reordered_cols = ['Prefix', 'First Name', 'Last Name', 'Primary Email', 'Seconda
        'Keywords', 'Business Structure', 'Fax Number', 'Non WBENC Awards', 'Outside Facilities']
 df = df[reordered_cols]
 
-df.to_csv('./data/Cleaned Seller data.csv')
+# need to save and then clean nulls
+df.to_csv('data/Cleaned Seller data.csv')
+# final cleaning: dataframe had ignored merged data null values
+df = pd.read_csv('data/Cleaned Seller data.csv')
+df.replace({np.nan:"none"}, inplace=True)
+df.to_csv('data/Cleaned Seller data.csv')
