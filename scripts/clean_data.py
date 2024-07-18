@@ -69,4 +69,4 @@ df.to_csv('data/Cleaned Seller data.csv')
 # final cleaning: dataframe had ignored merged data null values
 df = pd.read_csv('data/Cleaned Seller data.csv')
 df.replace({np.nan:"none"}, inplace=True)
-df.to_csv('data/Cleaned Seller data.csv')
+df.to_csv('data/Cleaned Seller data.csv', index=False)
