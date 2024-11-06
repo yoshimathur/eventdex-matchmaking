@@ -4,7 +4,7 @@ import numpy as np
 
 nlp = spacy.load("en_core_web_lg")
 df = pd.read_csv('data/Cleaned Seller data.csv', index_col=0)
-ignore_cols = [  'Primary Email', 'Secondary Email']
+ignore_cols = ['Primary Email', 'Secondary Email']
 vector_df = pd.DataFrame()
 
 for column in df.columns:
