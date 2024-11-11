@@ -1,4 +1,4 @@
-from client import OpenAI_Client
+from objects.client import OpenAI_Client
 
 client = OpenAI_Client().client
 
